@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        nav {
+            background: #555;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+            background: white;
+            margin: 15px;
+            border-radius: 8px;
+        }
+        img {
+            max-width: 100%;
+        }
+        form input, form textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+        }
+        form label {
+            margin-top: 15px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #5c67f2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3c44b1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Automobile Showcase</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#automobiles">Automobiles</a>
+        <a href="#booking">Vehicle Booking</a>
+        <a href="#tour">Tour Appointment</a>
+    </nav>
+
+    <div id="home" class="container">
+        <h2>Welcome to Our Automobile Showcase</h2>
+        <p>Discover our wide range of cars and book a tour today!</p>
+    </div>
+
+    <div id="about" class="container">
+        <h2>About Us</h2>
+        <p>We are passionate about cars and we provide the best information and services for car enthusiasts.</p>
+    </div>
+
+    <div id="automobiles" class="container">
+        <h2>Our Cars</h2>
+        <p>Explore our exclusive collection of automobiles.</p>
+        <img src="https://via.placeholder.com/600x400" alt="Car Image">
+        <h3>Model X</h3>
+        <p>This model is the epitome of luxury and performance.</p>
+    </div>
+
+    <div id="booking" class="container">
+        <h2>Vehicle Booking</h2>
+        <form id="bookingForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="model">Car Model:</label>
+            <input type="text" id="model" name="model" required>
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+
+    <div id="tour" class="container">
+        <h2>Tour Appointment</h2>
+        <form id="tourForm">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" name="contact" required>
+            <label for="visitDate">Visit Date:</label>
+            <input type="date" id="visitDate" name="visitDate" required>
+            <button type="submit">Schedule Visit</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Automobile Showcase. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you, ' + document.getElementById('name').value + '. Your booking is confirmed for ' + document.getElementById('date').value + '!');
+        });
+
+        document.getElementById('tourForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you, ' + document.getElementById('fullname').value + '. Your tour visit is scheduled for ' + document.getElementById('visitDate').value + '!');
+        });
+    </script>
+</body>
+</html>
