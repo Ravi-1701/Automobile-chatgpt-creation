@@ -3,132 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automobile Showcase</title>
+    <title>Automobile Website</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-        }
-        header, footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-        nav {
-            background: #555;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .container {
-            padding: 20px;
-            background: white;
-            margin: 15px;
-            border-radius: 8px;
-        }
-        img {
-            max-width: 100%;
-        }
-        form input, form textarea {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-top: 5px;
-        }
-        form label {
-            margin-top: 15px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #5c67f2;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #3c44b1;
-        }
+        body { font-family: Arial, sans-serif; }
+        header, footer { background: #333; color: white; padding: 10px 20px; }
+        nav ul { list-style-type: none; padding: 0; }
+        nav ul li { display: inline; margin-right: 10px; }
+        nav ul li a { color: white; text-decoration: none; }
+        section { margin: 20px; }
+        .car-item { margin-bottom: 20px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Automobile Showcase</h1>
+        <h1>Welcome to Our Automobile Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#automobiles">Automobiles</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#appointment">Appointment</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#automobiles">Automobiles</a>
-        <a href="#booking">Vehicle Booking</a>
-        <a href="#tour">Tour Appointment</a>
-    </nav>
 
-    <div id="home" class="container">
-        <h2>Welcome to Our Automobile Showcase</h2>
-        <p>Discover our wide range of cars and book a tour today!</p>
-    </div>
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to our premier car dealership. Find your perfect car today!</p>
+    </section>
 
-    <div id="about" class="container">
+    <section id="about">
         <h2>About Us</h2>
-        <p>We are passionate about cars and we provide the best information and services for car enthusiasts.</p>
-    </div>
+        <p>We are passionate about cars and quality service. Learn more about our history and values.</p>
+    </section>
 
-    <div id="automobiles" class="container">
+    <section id="automobiles">
         <h2>Our Cars</h2>
-        <p>Explore our exclusive collection of automobiles.</p>
-        <img src="https://via.placeholder.com/600x400" alt="Car Image">
-        <h3>Model X</h3>
-        <p>This model is the epitome of luxury and performance.</p>
-    </div>
+        <div class="car-item">
+            <h3>Car Model A</h3>
+            <img src="car-a.jpg" alt="Car Model A" style="width:100%;max-width:300px;">
+            <p>Description of Car Model A.</p>
+        </div>
+        <div class="car-item">
+            <h3>Car Model B</h3>
+            <img src="car-b.jpg" alt="Car Model B" style="width:100%;max-width:300px;">
+            <p>Description of Car Model B.</p>
+        </div>
+    </section>
 
-    <div id="booking" class="container">
+    <section id="booking">
         <h2>Vehicle Booking</h2>
-        <form id="bookingForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <form>
             <label for="model">Car Model:</label>
-            <input type="text" id="model" name="model" required>
-            <label for="date">Preferred Date:</label>
-            <input type="date" id="date" name="date" required>
-            <button type="submit">Book Now</button>
+            <select id="model" name="model">
+                <option value="a">Car Model A</option>
+                <option value="b">Car Model B</option>
+            </select>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+            <button type="submit">Book Vehicle</button>
         </form>
-    </div>
+    </section>
 
-    <div id="tour" class="container">
+    <section id="appointment">
         <h2>Tour Appointment</h2>
-        <form id="tourForm">
-            <label for="fullname">Full Name:</label>
-            <input type="text" id="fullname" name="fullname" required>
-            <label for="contact">Contact Number:</label>
-            <input type="text" id="contact" name="contact" required>
-            <label for="visitDate">Visit Date:</label>
-            <input type="date" id="visitDate" name="visitDate" required>
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="visitdate">Visit Date:</label>
+            <input type="date" id="visitdate" name="visitdate">
             <button type="submit">Schedule Visit</button>
         </form>
-    </div>
+    </section>
 
     <footer>
-        <p>&copy; 2024 Automobile Showcase. All rights reserved.</p>
+        <p>Copyright © 2023 Your Company Name</p>
     </footer>
 
     <script>
-        document.getElementById('bookingForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Thank you, ' + document.getElementById('name').value + '. Your booking is confirmed for ' + document.getElementById('date').value + '!');
-        });
-
-        document.getElementById('tourForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Thank you, ' + document.getElementById('fullname').value + '. Your tour visit is scheduled for ' + document.getElementById('visitDate').value + '!');
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from being submitted to server
+            alert('Thank you for your submission!');
         });
     </script>
 </body>
